@@ -427,6 +427,7 @@ footer{
 .recipe_bg{
     position: relative;
     background-image: url(../images/TeaRecipebg.webp);
+    background-color: #8aaece;
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;

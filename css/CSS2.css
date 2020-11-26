@@ -89,10 +89,6 @@ li{
 }
 
 .btn{
-    color: #ecb911;
-}
-
-.btn:hover{
     color: #000000;
 }
 
@@ -379,6 +375,7 @@ footer{
 .recipe_bg{
     position: relative;
     background-image: url(../images/TeaRecipebg.webp);
+    background-color: #8aaece;
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -443,7 +440,7 @@ footer{
 
     .recipe_main img{
         width: 550px;
-        height: 500px;
+        height: 470px;
     }
 }
 
@@ -455,4 +452,19 @@ footer{
     }
 }
 
+.recipe_end{
+    display: flex;
+    flex-direction: column;
+    background: #fab637;
+    padding: 1em;
+    text-align: center;
+}
 
+.recipe_end h2{
+    text-align: center;
+}
+
+.recipe_end button{
+    margin-left: auto;
+    margin-right: auto;
+}

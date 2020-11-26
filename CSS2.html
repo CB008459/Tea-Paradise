@@ -43,7 +43,7 @@
               <li class="nav-list"><a href="TypesofTea.html">Types of Tea</a></li>
               <li class="nav-list"><a href="TeaManfacturers.html">Tea Manfacturers</a></li>
               <li class="nav-list"><a href="BuyNow.html">Buy Now</a></li>
-              <li class="nav-list"><a href="#">About Us</a></li>
+              <li class="nav-list"><a href="ContactUs.html">Contact Us</a></li>
             </ul>
           </div>
 </header>
@@ -161,17 +161,13 @@
 <br>
 <section id="tea_recipes">
     <div class="container">
-        <div class="recipe_intro">
-            <div>
+        <div class="recipe_end">
                 <h2>A Guide to all time best tea recipes</h2>
                 <p>Everyone has their own tastes and it takes some ability to get the cup of tea right each time. The ingredients need to be proportional, the milk-water ratio should be right, and just enough needs to be brewed to improve the flavors. It's time to experiment until you've perfected the ideal formula and methodology.</p>
-            </div>
+                <a href="CSS1.html"><button class="btn"><span>CSS1</span></button></a>
         </div> 
     </div>
 </section>
-<div>
-    <button class="btn"><span>CSS1</span></button>
-</div>
 <br>
 <footer>
     <div class="footer_container">
@@ -179,7 +175,7 @@
             <div class="flex-container">
                 <h2>About Us</h2>
                 <img src="images/logo3.png" alt="">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam officiis quisquam aliquam provident ipsa quas nulla eaque optio, dicta repellat possimus nam.</p>
+                <p>We <b>unleash the strength</b> of tea to increase the quality of life for everyone and the best place to buy and read about tea is Tea Paradise. We want to reduce the cost of commodities, promote foreign consumer goods trade, and we want to help form a safer and healthier future for people and families, our cities, and the earth.</p>
             </div>
         </div>
         <div class="footer_item4">
@@ -213,9 +209,10 @@
                 <h2>Links for Images</h2>
                 <div class="image-links">
                     <ul>
-                        <li> <a href="">FlatIcon</a></li>
-                        <li><a href="">icons8</a></li>
-                        <li><a href="">UnSplash</a></li>
+                        <li><a href="https://unsplash.com/">Unsplash</a></li>
+                        <li><a href="https://icons8.com/">icons8</a></li>
+                        <li><a href="https://pixabay.com/">Pixabay</a></li>
+                        <li><a href="https://www.flaticon.com/">FlatIcon</a></li>
                     </ul>
                 </div>
             </div>
@@ -227,4 +224,21 @@
 </footer>    
 </body>
 <script src="scripts/main.js"></script>
+<script>
+    //check whether browser support service workers
+    if ('serviceWorker' in navigator) {
+        //wait until page loaded to avoid delaying rendering
+        window.addEventListener('load', function() {
+            //register service worker
+            navigator.serviceWorker.register('Serviceworker.js').then(
+                function(registration) {
+                    console.log('Service worker registration successful', 
+                                 registration);
+                }, 
+                function(err) {
+                    console.log('Service worker registration failed', err);
+            });
+        });
+    }
+    </script>
 </html>

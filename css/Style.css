@@ -77,7 +77,7 @@ li{
 .headline{
     font-family: 'Write', sans-serif;
     font-size: 1.5rem;
-    color: rgb(255, 255, 255);
+    color:#ffffff;
 }
 
 .global-headline{
@@ -370,14 +370,16 @@ footer{
 .footer_links{
     display: flex;
     flex-direction: column;
-    padding-left: 6.5rem;
-    padding-right: 6.5rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    background: #192a56;
 }
 
 .quicks_links{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 10px;
 }
 
 .quicks_links img{
@@ -446,7 +448,7 @@ footer{
     margin: auto;
     font-family: 'Fine';
     font-weight: 400;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
 }
 
 .btn{
@@ -736,12 +738,13 @@ footer{
 
 .teatypes_bg{
     position: relative;
-    background: url(../images/TeaTypesBg.jpg);
+    background-image: url(../images/TeaTypesBg.jpg);
+    background-color: #8aaece;
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} 
 
 /* Background Overlay */
 
@@ -1051,7 +1054,8 @@ table{
 
 .manf_bg{
     position: relative;
-    background: url(../images/Manf_BG.webp);
+    background-image: url(../images/Manf_BG.webp);
+    background-color: #8aaece;
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -1127,7 +1131,6 @@ table{
 
 .manf_content p{
     text-align: center;
-    margin: 1em;
 }
 
 .sub_overlay{
@@ -1216,6 +1219,10 @@ table{
     .stats_container{
         flex-direction: row;
     }
+
+    .manf_content p{
+        margin: 1em;
+    }
 }
 
 @media (min-width: 100px) and (max-width: 370px){
@@ -1230,7 +1237,8 @@ table{
 }
 
 #dilmah_BG{
-    background: url(../images/dilmah-estate.webp);
+    background-image: url(../images/dilmah-estate.webp);
+    background-color: #273c75;
     height: 60%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1238,7 +1246,8 @@ table{
 }
 
 #george_BG{
-    background: url(../images/george.webp);
+    background-image: url(../images/george.webp);
+    background-color: #273c75;
     height: 70%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1246,7 +1255,8 @@ table{
 }
 
 #malwatte_BG{
-    background: url(../images/malwatte.webp);
+    background-image: url(../images/malwatte.webp);
+    background-color: #273c75;
     height: 70%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1257,13 +1267,25 @@ table{
                                         /* Styling for Buy Now Page*/
 
 .buynow_BG{
-    background: url(../images/BuyNowBg.webp);
+    background-image:url(../images/BuyNowBg.webp);
+    background-color: #8aaece;
     position: relative;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
+    .buynow_BG{
+        background-image: url(../images/Respon4.webp);
+    }
+}
+
 
 .buynow_intro{
     position: absolute;
@@ -1505,6 +1527,7 @@ select{
 input[type="text"]{
     font-size: 1.2em;
     height: 3em;
+    width: 5em;
 }
 
 .form_box{
@@ -1547,6 +1570,25 @@ input[type="text"]{
 #form_end input[type="text"]{
     color: black;
     background: #bdc3c7;
+    width: 6em;
+}
+
+.form_total input[type="text"]{
+    height: 1.65em;
+    width: 5.75em;
+}
+
+.form_total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.form_total label{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'Fine';
+    font-size: 1.35rem;
 }
 
 #form_box{
@@ -1583,11 +1625,22 @@ input[type="text"]{
 
 .contact_BG{
     position: relative;
-    background: url(../images/Contact_bg.webp);
+    background-image: url(../images/Contact_bg.webp);
+    background-color: #8aaece;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
+    .contact_BG{
+        background-image: url(../images/Respon5.webp);
+    }
 }
 
 #contact_form{
@@ -1645,7 +1698,7 @@ input[type="text"]{
 }
 
 #contact{
-    background: #bdc3c7;
+    background: #95afc0;
 }
 
 .contact_info{
@@ -1664,7 +1717,6 @@ input[type="text"]{
     font-family: 'Good';
     font-size: 1.5em;
     text-align: center;
-
 }
 
 .contact_info p{
