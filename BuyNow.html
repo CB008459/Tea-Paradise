@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="F:\1st Year\1st Semester\Web Development\CB008459\appimages/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="F:\1st Year\1st Semester\Web Development\CB008459\appimages/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="F:\1st Year\1st Semester\Web Development\CB008459\appimages/favicon-16x16.png">
+    <link rel="manifest" href="F:\1st Year\1st Semester\Web Development\CB008459\site.webmanifest">
+    <link rel="mask-icon" href="F:\1st Year\1st Semester\Web Development\CB008459\appimages/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="F:\1st Year\1st Semester\Web Development\CB008459\appimages/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="msapplication-config" content="F:\1st Year\1st Semester\Web Development\CB008459\appimages/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="navbar">
+                <div id="logo">
+                    <div class="logo"> <img src="images/logo3.png" alt="main_logo"> </div>
+                </div>
+                <div id="nav-links">
+                    <a class="nav-item" href="index.html">Home</a>
+                    <a class="nav-item" href="TypesofTea.html">Types of Tea</a>
+                    <a class="nav-item" href="TeaManfacturers.html">Tea Manfacturers</a>
+                    <a class="nav-item" href="BuyNow.html">Buy Now</a>
+                    <a class="nav-item" href="#">About Us</a>
+                </div>
+                <div id="burger" onclick="myFunction(this)">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul class="mobile-links">
+              <li class="nav-list"><a href="index.html">Home</a></li>
+              <li class="nav-list"><a href="TypesofTea.html">Types of Tea</a></li>
+              <li class="nav-list"><a href="TeaManfacturers.html">Tea Manfacturers</a></li>
+              <li class="nav-list"><a href="BuyNow.html">Buy Now</a></li>
+              <li class="nav-list"><a href="#">About Us</a></li>
+            </ul>
+          </div>
+</header>
+<div class="buynow_BG"></div>
+<section id="buynow_intro">
+    <div class="container">
+        <div class="buynow_intro">
+            <h2 class="main-headline">
+                Choose your Tea
+            </h2>
+            <br>
+            <h1 class="headline"> Best Prices & Best Brands </h1>
+        </div>
+    </div>
+</section>
+<br>
+<div class="global-headline">
+    <h1>Order Your Tea Now</h1>
+</div>
+<div class="line4"></div>
+<br>
+<section>
+    <div class="container">
+        <div class="products_container">
+                <form name="teaMainForm" action="" id="teaform" onsubmit="return; false">
+                    <div id="form_container">
+                        <div class="form_1">
+                            <div class="section"><span>1</span>Manfacturers</div>
+                            <div class="inner-wrap">
+                                <label><input type="radio"  name="selectedTea" id="selectedTea" value="Dilmah" onclick="getTotalPrice(); cBrand()" /> Dilmah</label>
+                                <label><input type="radio"  name="selectedTea" id="selectedTea" value="Jones" onclick="getTotalPrice(); cBrand()" /> Jones</label>
+                                <label><input type="radio"  name="selectedTea" id="selectedTea" value="Malwatte" onclick="getTotalPrice(); cBrand()" /> Malwatte Tea</label>
+                                <label><input type="radio"  name="selectedTea" id="selectedTea" value="George" onclick="getTotalPrice(); cBrand()" /> George Steuart</label>
+                                <label><input type="radio"  name="selectedTea" id="selectedTea" value="Empires" onclick="getTotalPrice(); cBrand()" /> Empires Tea</label>
+                                <label><input type="radio"  name="selectedTea" id="selectedTea" value="Prestige" onclick="getTotalPrice(); cBrand()" /> Prestige Tea </label>
+                            </div>
+                        </div>
+                        <div class="form_2">
+                            <div class="section"><span>2</span>Size</div>
+                            <div class="inner-wrap">
+                                <label><input type="radio"  name="selectedSize" value="Small" onclick="getTotalPrice(); cSize()"/> Small</label>
+                                <label><input type="radio"  name="selectedSize" value="Medium" onclick="getTotalPrice(); cSize()"/> Medium</label>
+                                <label><input type="radio"  name="selectedSize" value="Large"onclick="getTotalPrice(); cSize()"/> Large</label>
+                            </div>
+                        </div>
+    
+                        <div class="form_1">
+                            <div class="section"><span>3</span>Package</div>
+                            <div class="inner-wrap">
+                                <label> 
+                                    <select id="Package" name='Package' onchange="getTotalPrice(); cPackage()">
+                                    <option value="None">Select Package</option>
+                                    <option id="default1" value="Tin">Tins</option>
+                                    <option value="Paper">Paper Pouches</option>
+                                    <option value="Bags">Bags</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+    
+                        <div class="form_2">
+                            <div class="section"><span>4</span>Extras</div>
+                            <div class="inner-wrap">
+                                <select id="Extras" name='Extras' onchange="getTotalPrice(); cExtras()">
+                                    <option value="None">Select Extras</option>
+                                    <option value="Mug">Mug</option>
+                                    <option value="Silver">Silver Pin</option>
+                                    <option value="Wooden">Wooden Souvenir</option>
+                                </select>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="form_btn">
+                        <button type="reset" class="buy_btn" id="addorder">Add to Order</button>
+                        <button type="reset" class="buy_btn" id="addFav">Add to Favourites</button>    
+                    </div>
+                </form>
+                <br>
+                <div id="formCurrent">
+                    <h2 class="form_header">Current Order</h2>
+                    <div class="form_wrap">
+                        <div class="form_box">
+                            <p>Brand</p>
+                            <input readonly class="box_2" type="text" name="cBrand" id="cBrand"/>
+                        </div>
+                        <div class="form_box">
+                            <p>Size</p>
+                            <input readonly class="box_2" type="text" name="cSize" id="cSize"/>
+                        </div>
+                        <div class="form_box">
+                            <p>Package</p>
+                            <input readonly class="box_2" type="text" name="cPackage" id="cPackage"/>
+                        </div>
+                        <div class="form_box">
+                            <p>Extras</p>
+                            <input readonly class="box_2" type="text" name="cExtras" id="cExtras"/>
+                        </div> 
+                    </div>
+                    <br>
+                    <div id="form_end" class="form_box">
+                        <p>Total Price</p>
+                        <input readonly class="box_2" type="text" name="cTotal" id="teaTotalPrice"/>
+                    </div>   
+                </div>
+                <br>
+                <div id="formFav">
+                    <h2 class="form_header">Favourites</h2>
+                    <div class="form_wrap">
+                        <div class="form_box">
+                            <p>Brand</p>
+                            <input readonly class="box_2" type="text" name="fBrand" id="fBrand"/>
+                        </div>
+                        <div class="form_box">
+                            <p>Size</p>
+                            <input readonly class="box_2" type="text" name="fSize" id="fSize"/>
+                        </div>
+                        <div class="form_box">
+                            <p>Package</p>
+                            <input readonly class="box_2" type="text" name="fPackage" id="fPackage"/>
+                        </div>
+                        <div class="form_box">
+                            <p>Extras</p>
+                            <input readonly class="box_2" type="text" name="fExtras" id="fExtras"/>
+                        </div> 
+                    </div>
+                    <br>
+                    <div id="form_end" class="form_box">
+                        <p>Total Price</p>
+                        <input readonly class="box_2" type="text" name="fTotal" id="fTotal"/>
+                    </div>
+                    <div id="form_box">
+                        <button type="submit" class="buy_btn" id="orderFav">Order Favourites</button>  
+                    </div>
+                </div>
+            </div> 
+            <br>
+            <br>
+            <div>
+                <h2 class="form_header">Overall Order</h2>
+                <table id="tblOverallOrder">
+                        <tr>
+                            <th>Order No.</th>
+                            <th>Brand</th>
+                            <th>Size</th>
+                            <th>Package</th>
+                            <th>Extras</th>
+                            <th>Total Price</th>
+                        </tr>
+                </table>    
+                <br>
+                <div class="form_total">
+                    <label for=""> Total Price of Overall Order</label>
+                    <input readonly class="box" type="text" name="total" id="overallPrice"/>    
+                </div>
+                <br>
+                <div class="form_btn">
+                    <button type="reset" class="buy_btn" id="placeOrder">Place Order</button>
+                    <button type="submit" class="buy_btn" id="checkLoyalty">Check Loyalty</button>    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<footer>
+    <div class="footer_links">
+        <div>
+            <h3>Quick Links</h3>
+        </div>
+        <div class="quicks_links">
+            <a href="index.html"><img src="images/icons8-home-48.png" alt="Home"></a>
+            <a href="TypesofTea.html"><img src="images/tea.png" alt="Types"></a>
+            <a href="TeaManfacturers.html"><img src="images/customs.png" alt="TeaManfacturers"></a>
+            <a href="BuyNow.html"><img src="images/buy.png" alt="BuyNow"></a>
+            <a href="ContactUs.html"><img src="images/information-desk.png" alt="ContactUs"></a>    
+        </div>
+    </div>
+    <div class="footer_container">
+        <div class="footer_item2">
+            <div class="flex-container">
+                <h2>About Us</h2>
+                <img src="images/logo3.png" alt="">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam officiis quisquam aliquam provident ipsa quas nulla eaque optio, dicta repellat possimus nam.</p>
+            </div>
+        </div>
+        <div class="footer_item4">
+            <div class="flex-conatiner">
+                <h2>For Business Inquiries</h2>
+                <div class="business_inq">
+                    <img src="images/call.png" alt="">
+                    <div class="one">
+                        <h4>Phone</h4>
+                        <p> +94 077 314 0722</p>
+                    </div>
+                </div>
+                <div class="business_inq">
+                    <img src="images/mail.png" alt="">
+                    <div class="one">
+                        <h4>E-mail Us On</h4>
+                        <p>cb008459@students.apiit.lk</p>
+                    </div>
+                </div>
+                <div class="business_inq">
+                    <img src="images/location.png" alt="">
+                    <div class="one">
+                        <h4>Address</h4>    
+                        <p>No 11, Bogawatte Road, Hekiatta Road, Wattala</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_item3">
+            <div class="flex-container">
+                <h2>Links for Images</h2>
+                <div class="image-links">
+                    <ul>
+                        <li> <a href="">FlatIcon</a></li>
+                        <li><a href="">Pixabay</a></li>
+                        <li><a href="">Lipton</a></li>
+                        <li><a href="">icons8</a></li>
+                        <li><a href="">iStock</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyrights">
+        <p>&copy; 2020 Tea Paradise, Inc.</p>
+    </div>
+</footer>    
+</body>
+<script src="scripts/main.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

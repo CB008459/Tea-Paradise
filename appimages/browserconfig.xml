@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="F:\1st Year\1st Semester\Web Development\CB008459\appimages/mstile-150x150.png"/>
+            <TileColor>#ffc40d</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

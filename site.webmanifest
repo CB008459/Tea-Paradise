@@ -1,0 +1,23 @@
+{
+    "name": "Tea Paradise",
+    "short_name": "Paradise",
+    "start_url": "index.html",
+    "description": "A Progressive Web Application",
+    "lang":"en",
+    "orientation": "portrait-primary",   
+    "icons": [
+        {
+            "src": "appimages/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "appimages/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#192a56",
+    "background_color": "#192a56",
+    "display": "standalone"
+}

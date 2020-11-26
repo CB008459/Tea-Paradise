@@ -1,0 +1,575 @@
+
+@font-face {
+    font-family: 'Neue';
+    src: url(../fonts/Helvetica\ Neue\ LT\ 55\ Roman.ttf);
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fine';
+    src: url(../fonts/Courgette-Regular.ttf);
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Write';
+    src: url(../fonts/Optima-Medium.otf);
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Good';
+    src: url(../fonts/ElMessiri-SemiBold.ttf);
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Rust';
+    src: url(../fonts/SouvenirStd-Light.otf);
+}
+
+@font-face{
+    font-family: 'Better';
+    src: url(../fonts/);
+}
+
+                                        /* Universal Styling */
+
+html, body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Neue';
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+h1, h2, h4{
+    margin: 0;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+p{
+    line-height: 1.5rem;
+}
+
+li{
+    line-height: 1.5rem;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background: none;
+    font-family: 'Write';
+    padding: 10px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn{
+    color: #ffffff;
+}
+
+.btn:hover{
+    color: #3498db;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #ffffff;
+    z-index: -200;
+    transition: 0.8s;
+}
+
+.btn::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+.btn:hover::before{
+    height: 180%;
+}
+
+.main-headline{
+    font-size: 4.5rem;
+    margin: auto;
+    font-family: 'Fine';
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+}
+
+.global-headline{
+    color: #454543;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    padding: 0.5rem;
+    text-align: center;
+    font-family: 'Rust';
+}
+
+.line4{ 
+    width: 30%;
+    height: 3px;
+    background-color: #f7c111;
+    margin-bottom: 1rem;
+    transform: translateX(115%);
+}
+
+                                        /* Stylig for Navigation [Mobile]*/
+
+#logo{
+    display: grid;
+    justify-content: center;
+    background: #ecf0f1;
+}
+
+#logo_img{
+    width: 200px;
+    height: 90px;
+}
+
+
+.mobile-menu{
+    position: absolute;
+    top: 17vh;
+    list-style-type: none;
+    background: rgb(243, 238, 238);
+    float: left;
+    width: 100%;
+    padding: 5px 0 0 0;
+    transform: translateX(-100%);
+    transition: transform .6s;
+    z-index: 1000;
+}
+
+.mobile-links li{
+    line-height: 2.8rem;
+}
+
+.nav-list{
+    list-style-type: none;
+}
+
+.nav-list a{
+    font-family: 'Good', sans-serif;
+    font-size: 1.25rem;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.nav-list:hover {
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 206, 27);
+}
+
+.mobile-menu-active{
+    transform: translateX(0%);
+}
+
+#burger{
+    display: grid;
+    justify-content: end;
+    align-content: center;
+    grid-auto-flow: row;
+    cursor: pointer;
+}
+
+.line1, .line2, .line3{
+    width: 26px;
+    height: 3px;
+    transition: 0.4s;
+    background-color: rgb(0, 0, 0);
+    margin: 2px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 25px;
+}
+
+                            /* Animation for Hamburger Icon [Hamburger menu into X] */
+
+.change .line1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+    
+.change .line2 {opacity: 0;}
+    
+.change .line3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -6px);
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+
+                                        /* Stylig for Navigation [Desktop]*/
+
+#navbar {
+    display: grid;
+    height: 8vh;
+    grid-auto-flow: column;
+    background: #ecf0f1;
+    grid-gap: 1.5rem;
+    padding: 0 15px;
+    overflow: hidden;
+    -webkit-box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 0.541);
+    -moz-box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 0.541);
+    box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 0.541);
+}
+
+.nav-links{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: column;
+    grid-gap: 2em;
+    font-family: 'Good', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.nav-item:hover {
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 206, 27);
+}
+
+.nav-links a{
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Mobile to Tablet  */
+@media (max-width: 730px) {
+
+    #logo{
+        justify-content: space-around;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    #navbar{
+        padding: 0;
+    }
+  }
+  
+  /* Tablet to Desktop */
+  @media (min-width: 730px) {
+    .mobile-menu,
+    #burger,
+    .line1, .line2, .line3 {
+      display: none;
+    }
+}
+                                        /* End of Styling for Navigation */
+
+                                        /* Styling for Footer */
+
+footer{
+    background: #2c3e50;
+    padding: 0;
+}
+
+.footer_container{
+    display: grid;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_container h2{
+    font-family: 'Write';
+    color: #ffffff;
+    margin-bottom: 1em;
+}
+
+.footer_item2, .footer_item3, .footer_item4{
+    padding: 1em;
+}
+
+.footer_links h3{
+    font-family: 'Write';
+    text-align: center;
+    margin-top: 0;
+    color: #ffffff;
+}
+
+@media only screen and (min-width: 850px){
+
+    .footer_container{
+        padding: 0 2.5rem;
+        grid-template-columns: 1.5fr 1.5fr 1fr;
+    }
+}
+
+.footer_item3, .footer_item4{
+    max-width: 380px;
+    max-height: 320px;
+}
+
+.footer_item2, .footer_item3, .footer_item4{
+    padding: 1rem;
+}
+
+.footer_item2 img{
+    padding-left: 0.5em;
+    width: 180px;
+    height: 80px;
+    margin-bottom: 5px;
+}
+
+.footer_item2 p{
+    padding-left: 0.5em;
+    margin: 0;
+    margin-bottom: 1em;
+    color: #ffffff;
+}
+
+.footer_item3 a{
+    color: #ffffff;
+}
+
+.footer_item3 ul li{
+    color: #ffffff;
+    padding: 8px;
+}
+
+.business_inq{
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+}
+
+.business_inq img{
+    margin: 10px;
+    width: 32px;
+    height: 32px;
+}
+
+.business_inq h4{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.business_inq p{
+    padding-left: 0;
+    margin: 0;
+}
+
+.one{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_item3 ul li{
+    list-style: '🔍';
+}
+
+.footer_links{
+    display: flex;
+    flex-direction: column;
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+}
+
+.quicks_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.quicks_links img{
+    width: 40px;
+    height: 40px;
+}
+
+.copyrights{
+    background: #bdc3c7;
+    border-top:1px solid #dfe4ea;
+    border-bottom: 1px solid #dfe4ea;
+}
+
+.copyrights p{
+    font-family: 'Rust';
+    text-align: center;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+}
+                                        
+                                                        /* End of Styling for footer */
+                
+
+                                                            /* Background Styling */
+
+.recipe_bg{
+    position: relative;
+    background-image: url(../images/TeaRecipebg.webp);
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}  
+
+.recipe_overlay{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    z-index: 200;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+                                                    /*End of Background Styling */
+
+                                                    /* Styling for First Section */
+
+.recipe_intro{
+    padding: 2em;
+    background: #b3c7d6ff;
+    display: flex;
+    justify-content: space-around;
+}
+
+#tea_recipes{
+    padding: 0.5em;
+}
+
+.recipe_intro h2{
+    font-family: 'Write';
+}
+
+.recipe_intro p{
+    padding-top: 0.5em;
+}
+
+
+@media only screen and (min-width: 600px){
+
+    .recipe_intro{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    #tea_recipes{
+        padding: 3em;
+    }
+}
+
+                                                /*End of Styling for First Section */
+
+
+#recipe_content{
+    padding: 2em;
+}
+
+#recipe_content h2{
+    font-family: 'Good';
+    color: #05162c;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.5em;
+    margin: 0;
+}
+
+#recipe_content h3{
+    font-family: 'Write';
+    font-size: 1.75rem;
+    color: #2a2b2c;
+    text-align: center;
+    padding: 1em;
+    margin: 0;
+}
+
+#recipe_content ul{
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe_content ul li{
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+}
+
+.ind_list{
+    align-items: left;
+    list-style: url(../images/recipe.png);
+}
+
+
+.method_list :nth-child(1){
+    list-style: url(../images/n1.png);
+}
+
+.method_list :nth-child(2){
+    list-style: url(../images/n2.png);
+}
+
+.method_list :nth-child(3){
+    list-style: url(../images/n3.png);
+}
+
+@media only screen and (min-width: 400px){
+
+    .ind_list{
+        align-items: center;
+    }
+
+    #recipe_content h2{
+        font-size: 2.5rem;
+    }
+
+}
+
+/* Background Styling for 1st recipe */
+
+.iced_teaBG{
+    background: url(../images/Iced\ Tea.webp);
+    height: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Background Styling for 2nd recipe */
+
+.berry_teaBG{
+    background: url(../images/Berry_recipe.webp);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Background Styling for 3rd recipe */
+
+.mexican_teaBG{
+    background: url(../images/Mexican_tea.webp);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
