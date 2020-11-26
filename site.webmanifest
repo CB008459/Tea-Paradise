@@ -2,7 +2,7 @@
     "name": "Tea Paradise",
     "short_name": "Paradise",
     "start_url": "index.html",
-    "description": "A Progressive Web Application",
+    "description": "A Progressive Web Tea Application",
     "lang":"en",
     "orientation": "portrait-primary",   
     "icons": [
@@ -17,7 +17,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#192a56",
-    "background_color": "#192a56",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone"
 }
