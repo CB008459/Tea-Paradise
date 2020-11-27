@@ -61,12 +61,21 @@ function green(){
 function herbal(){
     window.location='#herbal_tea';
 }
+function inlineD(){
+    window.location='#dilmah_BG';
+}
+
+function inlineM(){
+    window.location='#malwatte_BG';
+}
+
+function inlineG(){
+    window.location='#george_BG';
+}
 
 // Scripting For Buy Now Page
 
 let theForm = document.forms["teaform"];
-
-document.getElementById('overallPrice').value = "LKR "+ 0;
 
 let tea_prices = new Array();
 tea_prices["Dilmah"]=1000;
@@ -233,7 +242,7 @@ let extras_name = new Array();
 extras_name["None"]="None";
 extras_name["Mug"]="Mug";
 extras_name["Silver"]="Silver Pin";
-extras_name["Wooden"]="Wooden Souvenir";
+extras_name["Wooden"]="Souvenir";
 
 function getExtrasName() {
 
@@ -303,7 +312,7 @@ function cSize(){
 let packages_name = new Array();
 packages_name["None"] = "None";
 packages_name["Tin"]="Tins";
-packages_name["Paper"]="Paper Pouches";
+packages_name["Paper"]="Paper";
 packages_name["Bags"]="Bags";
 
 
@@ -492,28 +501,30 @@ let btnLoyalty = document.getElementById('checkLoyalty');
 
 btnLoyalty.addEventListener('click', checkLoyalty);
 
+
 function checkLoyalty() {
 
+
     let table1 = document.getElementById("tblOverallOrder");
+    // "-1" is to avoid the Header count of the table 
     let points = (table1.rows.length - 1);
 
     let final = 0;
-    let Loyalty = [];
-    if("Loyalty" in localStorage) {
-    Loyalty = JSON.parse(localStorage.getItem('Loyalty'));
-    }
-
-    // "-1" is to avoid the Header count of the table 
+    
    if (points > 4) {
-       let reward = 0;
        final = (points * 20);
-       Loyalty.push(final);
-       localStorage.setItem('Loyalty', JSON.stringify(Loyalty));
-       reward = Loyalty[0];
+
        window.alert("You have Earned " + final +" Loyalty Points");
    } else{
        window.alert("You have not Earned Enough Loyalty Points");
    }
+   let Loyalty = [];
+   if("Loyalty" in localStorage) {
+       Loyalty = JSON.parse(localStorage.getItem('Loyalty'));
+   }
+   
+   Loyalty.push(final);
+   localStorage.setItem('Loyalty', JSON.stringify(Loyalty));
 }
 
 // Place Order
@@ -526,25 +537,13 @@ function placeOrder(){
 
     let table2 = document.getElementById("tblOverallOrder");
     let orderNo = (table2.rows.length - 1);
-
-    let newRow = table2.insertRow(table2.rows.length/1);
     
-    // add cells to the row
-    let cel1 = newRow.insertCell(0);
-    let cel2 = newRow.insertCell(1);
-    let cel3 = newRow.insertCell(2);
-    let cel4 = newRow.insertCell(3);
-    let cel5 = newRow.insertCell(4);
-    let cel6 = newRow.insertCell(5);
-
     if(orderNo >= 1){
-        cel1.innerHTML = " ";
-        cel2.innerHTML = " ";
-        cel3.innerHTML = " ";
-        cel4.innerHTML = " ";
-        cel5.innerHTML = " ";
-        cel6.innerHTML = " ";
         window.alert("Thanks for Purchasing with Us");
+        document.getElementById('overallPrice').value ="LKR " + 0;
+        for(let i = 1; i < table2.rows.length; i++){
+            table2.rows[i].innerHTML = "";
+        }
     }else{
         window.alert("No Final Order to Proceed");
     }
