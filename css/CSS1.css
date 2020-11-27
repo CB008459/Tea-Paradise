@@ -156,7 +156,7 @@ li{
 
 .mobile-menu{
     position: absolute;
-    top: 17vh;
+    top: 24vh;
     list-style-type: none;
     background: rgb(243, 238, 238);
     float: left;
@@ -516,7 +516,6 @@ footer{
 }
 
 .ind_list{
-    align-items: left;
     list-style: url(../images/recipe.png);
 }
 
@@ -548,7 +547,7 @@ footer{
 /* Background Styling for 1st recipe */
 
 .iced_teaBG{
-    background: url(../images/Iced\ Tea.webp);
+    background: url(../images/IcedTea.webp);
     height: 60%;
     background-position: center;
     background-repeat: no-repeat;

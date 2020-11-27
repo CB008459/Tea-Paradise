@@ -123,9 +123,9 @@ li{
 .global-headline{
     color: #454543;
     font-size: 2rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding: 0.5rem;
-    text-align: left;
+    text-align: center;
     font-family: 'Fine';
 }
 
@@ -388,7 +388,6 @@ footer{
     left: 0;
     z-index: 200;
     width: 100%;
-    align-items: left;
     text-align: left;
 }
 

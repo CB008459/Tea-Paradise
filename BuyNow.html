@@ -70,7 +70,7 @@
 <section>
     <div class="container">
         <div class="products_container">
-                <form name="teaMainForm" action="" id="teaform" onsubmit="return; false">
+                <form name="teaMainForm" id="teaform" onsubmit="return; false">
                     <div id="form_container">
                         <div class="form_1">
                             <div class="section"><span>1</span>Manfacturers</div>
@@ -88,7 +88,7 @@
                             <div class="inner-wrap">
                                 <label><input type="radio"  name="selectedSize" value="Small" onclick="getTotalPrice(); cSize()"/> Small</label>
                                 <label><input type="radio"  name="selectedSize" value="Medium" onclick="getTotalPrice(); cSize()"/> Medium</label>
-                                <label><input type="radio"  name="selectedSize" value="Large"onclick="getTotalPrice(); cSize()"/> Large</label>
+                                <label><input type="radio"  name="selectedSize" value="Large" onclick="getTotalPrice(); cSize()"/> Large</label>
                             </div>
                         </div>
     
@@ -197,7 +197,7 @@
                 </table>    
                 <br>
                 <div class="form_total">
-                    <label for=""> Total Price of Overall Order</label>
+                    <label for="OverallPrice"> Total Price of Overall Order</label>
                     <input readonly class="box" type="text" name="total" id="overallPrice"/>    
                 </div>
                 <br>
@@ -207,7 +207,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <br>
 <footer>
@@ -270,8 +269,7 @@
     <div class="copyrights">
         <p>© 2020 Tea Paradise, Inc.</p>
     </div>
-</footer>    
-</body>
+</footer> 
 <script src="scripts/main.js"></script>
 <script>
     //check whether browser support service workers
@@ -289,8 +287,9 @@
             });
         });
     }
-    </script>
-    </html>
+    </script>   
+</body>
+</html>
 
 
 

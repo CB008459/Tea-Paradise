@@ -16,6 +16,52 @@ function myFunction(x) {
     x.classList.toggle("change");
 }
 
+// Scripting for Button (Links) 
+
+function visitPage1(){
+    window.location='CSS2.html';
+}
+
+function CSS1(){
+    window.location='CSS1.html'; 
+}
+
+function Dilmah(){
+    window.location='https://www.dilmahtea.com/'; 
+}
+
+function Malwatte(){
+    window.location='https://www.malwattevalley.com'; 
+}
+
+function George(){
+    window.location='https://gsteas.lk/'; 
+}
+
+function Home(){
+    window.location='#part-one'; 
+}
+
+function Types(){
+    window.location='#types_intro';
+}
+
+function black(){
+    window.location='#black_tea';
+}
+
+function white(){
+    window.location='#white_tea';
+}
+
+function green(){
+    window.location='#green_tea';
+}
+
+function herbal(){
+    window.location='#herbal_tea';
+}
+
 // Scripting For Buy Now Page
 
 let theForm = document.forms["teaform"];
@@ -179,14 +225,15 @@ function cBrand(){
     }
 
     document.getElementById('cBrand').value = teaName;
+    return teaName;
 }
 
 
 let extras_name = new Array();
 extras_name["None"]="None";
 extras_name["Mug"]="Mug";
-extras_name["Silver"]="Silver";
-extras_name["Wooden"]="Wooden";
+extras_name["Silver"]="Silver Pin";
+extras_name["Wooden"]="Wooden Souvenir";
 
 function getExtrasName() {
 
@@ -256,7 +303,7 @@ function cSize(){
 let packages_name = new Array();
 packages_name["None"] = "None";
 packages_name["Tin"]="Tins";
-packages_name["Paper"]="Paper";
+packages_name["Paper"]="Paper Pouches";
 packages_name["Bags"]="Bags";
 
 
@@ -299,41 +346,48 @@ function getTotalCost(){
 
 function appendOrder(){
 
-    let table = document.getElementById('tblOverallOrder');
+        let Product = cBrand();
+
+        if(Product === "None"){
+            window.alert("Select Items to Proceed")
+        }else{
+            let table = document.getElementById('tblOverallOrder');
                   
-    let newRow = table.insertRow(table.rows.length/1);
-    
-    // add cells to the row
-    let cel1 = newRow.insertCell(0);
-    let cel2 = newRow.insertCell(1);
-    let cel3 = newRow.insertCell(2);
-    let cel4 = newRow.insertCell(3);
-    let cel5 = newRow.insertCell(4);
-    let cel6 = newRow.insertCell(5);
-
-
-    // Displaying results in the table
-    cel1.innerHTML = (table.rows.length - 1); 
-    cel2.innerHTML = getTeaName(); // Brand
-    cel3.innerHTML = getTeaSizeName(); // Size 
-    cel4.innerHTML = getPackageName(); // Package 
-    cel5.innerHTML = getExtrasName(); // Extras 
-    cel6.innerHTML = getTotalCost()// Total Price
-
-    let overallPrice = 0;
-
+            let newRow = table.insertRow(table.rows.length/1);
             
-    for(let i = 1; i < table.rows.length; i++)
-    {
-        overallPrice = overallPrice + parseInt(table.rows[i].cells[5].innerHTML);
-    }
+            // add cells to the row
+            let cel1 = newRow.insertCell(0);
+            let cel2 = newRow.insertCell(1);
+            let cel3 = newRow.insertCell(2);
+            let cel4 = newRow.insertCell(3);
+            let cel5 = newRow.insertCell(4);
+            let cel6 = newRow.insertCell(5);
+        
+        
+            // Displaying results in the table
+            cel1.innerHTML = (table.rows.length - 1); 
+            cel2.innerHTML = getTeaName(); // Brand
+            cel3.innerHTML = getTeaSizeName(); // Size 
+            cel4.innerHTML = getPackageName(); // Package 
+            cel5.innerHTML = getExtrasName(); // Extras 
+            cel6.innerHTML = getTotalCost()// Total Price
+        
+            let overallPrice = 0;
+        
+                    
+            for(let i = 1; i < table.rows.length; i++)
+            {
+                overallPrice = overallPrice + parseInt(table.rows[i].cells[5].innerHTML);
+            }
+        
+            document.getElementById('cBrand').value ="";
+            document.getElementById('cSize').value ="";
+            document.getElementById('cPackage').value ="";    
+            document.getElementById('cExtras').value ="";    
+            document.getElementById('teaTotalPrice').value ="LKR " + 0;    
+            document.getElementById('overallPrice').value ="LKR " + overallPrice;
+        }
 
-    document.getElementById('cBrand').value ="";
-    document.getElementById('cSize').value ="";
-    document.getElementById('cPackage').value ="";    
-    document.getElementById('cExtras').value ="";    
-    document.getElementById('teaTotalPrice').value ="LKR " + 0;    
-    document.getElementById('overallPrice').value ="LKR " + overallPrice;
 }
 
 // Scripting for Favorites 
@@ -345,6 +399,11 @@ btnAddFav.addEventListener('click', addFavOrder);
 // Storing Favourites Values in Local Storage 
 function addFavOrder() {
 
+    let Product = cBrand();
+
+    if(Product === "None"){
+        window.alert("Select Items to Proceed")
+    }else{
     let Favourites = [];
     if("Favourites" in localStorage) {
       TeaParadise = JSON.parse(localStorage.getItem('Favourites'));
@@ -369,7 +428,8 @@ function addFavOrder() {
     document.getElementById('cSize').value ="";
     document.getElementById('cPackage').value ="";    
     document.getElementById('cExtras').value ="";    
-    document.getElementById('teaTotalPrice').value ="LKR " + 0;    
+    document.getElementById('teaTotalPrice').value ="LKR " + 0; 
+    }   
 }
 
 // Adding Favourites to Overall Order
@@ -433,14 +493,60 @@ let btnLoyalty = document.getElementById('checkLoyalty');
 btnLoyalty.addEventListener('click', checkLoyalty);
 
 function checkLoyalty() {
-    let totalRowCount = 0;
-    let table = document.getElementById("tblOverallOrder");
-    let rows = table.getElementsByTagName("tr")
-    for (let i = 0; i < rows.length; i++) {
-        totalRowCount++;
+
+    let table1 = document.getElementById("tblOverallOrder");
+    let points = (table1.rows.length - 1);
+
+    let final = 0;
+    let Loyalty = [];
+    if("Loyalty" in localStorage) {
+    Loyalty = JSON.parse(localStorage.getItem('Loyalty'));
     }
 
-    // "-1" is to avoid the Header count of the table
-    document.getElementById('count').innerHTML = totalRowCount - 1;
+    // "-1" is to avoid the Header count of the table 
+   if (points > 4) {
+       let reward = 0;
+       final = (points * 20);
+       Loyalty.push(final);
+       localStorage.setItem('Loyalty', JSON.stringify(Loyalty));
+       reward = Loyalty[0];
+       window.alert("You have Earned " + final +" Loyalty Points");
+   } else{
+       window.alert("You have not Earned Enough Loyalty Points");
+   }
+}
+
+// Place Order
+
+let btnPlaceOrder = document.getElementById('placeOrder');
+
+btnPlaceOrder.addEventListener('click', placeOrder);
+
+function placeOrder(){
+
+    let table2 = document.getElementById("tblOverallOrder");
+    let orderNo = (table2.rows.length - 1);
+
+    let newRow = table2.insertRow(table2.rows.length/1);
     
+    // add cells to the row
+    let cel1 = newRow.insertCell(0);
+    let cel2 = newRow.insertCell(1);
+    let cel3 = newRow.insertCell(2);
+    let cel4 = newRow.insertCell(3);
+    let cel5 = newRow.insertCell(4);
+    let cel6 = newRow.insertCell(5);
+
+    if(orderNo >= 1){
+        cel1.innerHTML = " ";
+        cel2.innerHTML = " ";
+        cel3.innerHTML = " ";
+        cel4.innerHTML = " ";
+        cel5.innerHTML = " ";
+        cel6.innerHTML = " ";
+        window.alert("Thanks for Purchasing with Us");
+    }else{
+        window.alert("No Final Order to Proceed");
+    }
+
 }
