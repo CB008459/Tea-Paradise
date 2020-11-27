@@ -3,34 +3,40 @@
     font-family: 'Neue';
     src: url(../fonts/Helvetica\ Neue\ LT\ 55\ Roman.ttf);
     font-style: normal;
+    font-display: block;
 }
 
 @font-face{
     font-family: 'Fine';
     src: url(../fonts/Courgette-Regular.ttf);
     font-style: normal;
+    font-display: block;
 }
 
 @font-face{
     font-family: 'Write';
     src: url(../fonts/Optima-Medium.otf);
     font-style: normal;
+    font-display: block;
 }
 
 @font-face{
     font-family: 'Good';
     src: url(../fonts/ElMessiri-SemiBold.ttf);
     font-style: normal;
+    font-display: block;
 }
 
 @font-face{
     font-family: 'Rust';
     src: url(../fonts/SouvenirStd-Light.otf);
+    font-display: block;
 }
 
 @font-face{
     font-family: 'Better';
     src: url(../fonts/ProzaLibre-Medium.ttf);
+    font-display: block;
 }
 
                                         /* Universal Styling */
@@ -1548,7 +1554,7 @@ input[type="text"]{
     border-bottom: 1px solid #192a56;
 }
 
-.form_box p{
+.form_box label{
     padding: 0 8px;
     font-family: 'Fine';
     font-size: 1.23rem;
@@ -1711,6 +1717,7 @@ only screen and (min-resolution: 2dppx) {
 
 #contact{
     background: #95afc0;
+    margin-bottom: 2.5em;
 }
 
 .contact_info{
@@ -1755,4 +1762,9 @@ only screen and (min-resolution: 2dppx) {
         height: 360px;
     }
 
+}
+
+.price{
+    color: #0a0a0a;
+    font-size: 16px;
 }
